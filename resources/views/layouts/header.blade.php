@@ -1,11 +1,8 @@
   <!-- Main Header -->
   <header class="main-header">
-
     <!-- Logo -->
     <a href="index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <!-- logo for regular state and mobile devices -->
-      <span class="">{{ config('app.name', 'InventoryManagement') }}</span>
+        <span class="">Inventory</span>
     </a>
 
     <!-- Header Navbar -->

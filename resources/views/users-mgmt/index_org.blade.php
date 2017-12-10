@@ -1,8 +1,7 @@
-@extends('layouts.master')
-@section('title','Dashboard | Inventory')
-
-@section('content')
-  <section class="content">
+@extends('users-mgmt.base')
+@section('action-content')
+    <!-- Main content -->
+    <section class="content">
       <div class="box">
   <div class="box-header">
     <div class="row">
@@ -56,11 +55,11 @@
                     <form class="row" method="POST" action="{{ route('user-management.destroy', ['id' => $user->id]) }}" onsubmit = "return confirm('Are you sure?')">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <a href="{{ route('user-management.edit', ['id' => $user->id]) }}" class="btn btn-sm btn-warning col-sm-3 col-xs-5 btn-margin">
+                        <a href="{{ route('user-management.edit', ['id' => $user->id]) }}" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">
                         Update
                         </a>
                         @if ($user->username != Auth::user()->username)
-                         <button type="submit" class="btn btn-sm btn-danger col-sm-3 col-xs-5 btn-margin">
+                         <button type="submit" class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
                           Delete
                         </button>
                         @endif

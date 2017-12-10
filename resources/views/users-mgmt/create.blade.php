@@ -1,6 +1,10 @@
-@extends('users-mgmt.base')
+@extends('layouts.master')
+@section('title','Dashboard | Inventory')
+@section('page_title','Dashboard')
+@section('head_title','Create User')
 
-@section('action-content')
+@section('content')
+  
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

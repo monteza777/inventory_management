@@ -18,11 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
-
+// user routes
 Route::post('user-management/search', 'UserManagementController@search')->name('user-management.search');
 Route::resource('user-management', 'UserManagementController');
 Route::post('system-management/report/search', 'ReportController@search')->name('report.search');
 Route::post('system-management/report/excel', 'ReportController@exportExcel')->name('report.excel');
 Route::post('system-management/report/pdf', 'ReportController@exportPDF')->name('report.pdf');
-
-Route::get('avatars/{name}', 'EmployeeManagementController@load');
+// end of user routes
+Route::resource('items-mgmt', 'ItemManagementController');

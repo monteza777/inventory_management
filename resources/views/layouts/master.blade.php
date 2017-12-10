@@ -2,7 +2,7 @@
 <html>
   @include('include.header')
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -13,16 +13,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Dashboard
-      </h1>
       <ol class="breadcrumb">
         <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
-        <li class="active">@yield('page_title')</li>
+        <!-- <li class="active">@yield('page_title')</li> -->
       </ol>
     </section>
-
-    <!-- Main content -->
+    <h1 class="container">@yield('head_title')</h1>
     <section class="content">
 
       @section('content')
