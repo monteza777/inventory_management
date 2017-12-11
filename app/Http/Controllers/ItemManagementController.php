@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Item;
 
 class ItemManagementController extends Controller
@@ -16,7 +15,7 @@ class ItemManagementController extends Controller
 
     public function index()
     {
-        $items = Item::paginate(5);
+        $items = Item::paginate(10);
         return view('items-mgmt.item_index',compact('items'));
     }
 
@@ -75,7 +74,7 @@ class ItemManagementController extends Controller
 
     public function update(Request $request, $id)
     {
-        $items = Items::find($id);
+        $items = Item::find($id);
         $items->item_code = $request['item_code'];
         $items->item_description = $request['item_description'];
         $items->uom = $request['uom'];
@@ -95,6 +94,8 @@ class ItemManagementController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Item::find($id);
+        $item->delete();
+        return redirect('items-mgmt');
     }
 }

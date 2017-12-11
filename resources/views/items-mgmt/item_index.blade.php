@@ -4,6 +4,7 @@
 
 
 @section('content')
+@include('layouts.modal')
   <section class="content">
       <div class="box">
   <div class="box-header">
@@ -25,15 +26,15 @@
     <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
       <div class="row">
         <div class="col-sm-12">
-          <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+          <table class="table table-bordered table-striped table-hover category-table" data-toggle="dataTable" data-form="deleteForm" role="grid">
             <thead>
               <tr role="row">
                 <th width="10%">Item Code</th>
                 <th width="20%">Item Description</th>
                 <th width="10%">Uom</th>
                 <th width="5%">Quantity</th>
-                <th width="10%">Buying Price</th>
-                <th width="15%">Selling Price</th>
+                <th width="10%">B.P</th>
+                <th width="15%">S.P</th>
                 <th width="20%">Action</th>
               </tr>
             </thead>
@@ -53,11 +54,12 @@
                          </a>
                       </li>
                       <li>
-                        <form action="{{ route('items-mgmt.destroy', ['id' => $item->id])}}" method="post" class="form-group btn-xs float-right">
-                          {{csrf_field()}}
-                           {{method_field('DELETE')}}
-                        <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirmDelete();">
-                        </form>
+                     {!! Form::model($item, ['method' => 'delete', 'route' => ['items-mgmt.destroy', $item->id], 'class' =>'form-inline form-delete']) !!}
+                    {!! Form::hidden('id', $item->id) !!}
+                    {!! Form::submit(trans('Delete'), ['class' => 'btn btn-xs btn-danger delete', 'name' => 'delete_modal']) !!}
+                    {!! Form::close() !!}
+
+
                     </li>
                     </ul>
                   </td>
@@ -70,8 +72,8 @@
                 <th width="20%" rowspan="1" colspan="1">Item Description</th>
                 <th class="hidden-xs" width="20%" rowspan="1" colspan="1">Uom</th>
                 <th class="hidden-xs" width="20%" rowspan="1" colspan="1">Quantity</th>
-                <th class="hidden-xs" width="20%" rowspan="1" colspan="1">Buying Price</th>
-                <th class="hidden-xs" width="20%" rowspan="1" colspan="1">Selling Price</th>
+                <th class="hidden-xs" width="20%" rowspan="1" colspan="1">B.P</th>
+                <th class="hidden-xs" width="20%" rowspan="1" colspan="1">S.P</th>
                 <th rowspan="1" colspan="2">Action</th>
               </tr>
             </tfoot>

@@ -10,7 +10,7 @@
           <h3 class="box-title">List of users</h3>
         </div>
         <div class="col-sm-4">
-          <a class="btn btn-primary" href="{{ route('user-management.create') }}">Add new user</a>
+          <a class="btn btn-primary pull-right" href="{{ route('user-management.create') }}">Add new user</a>
         </div>
     </div>
   </div>

@@ -31,7 +31,7 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="/"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+        <li class="link {{Request::is('users') ? " active " : "" }}""><a href="/"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
         <li><a href="{{ url('items-mgmt') }}"><i class="fa fa-link"></i> <span>Inventory Items</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>System Management</span>

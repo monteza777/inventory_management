@@ -11,7 +11,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Add new Item</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('items-mgmt.store') }}">
+                    <form class="form-horizontal" role="form" method="post" action="{{ route('items-mgmt.update',['id' => $items->id]) }}">
                         {{ csrf_field() }}
                          {{method_field('PUT')}}
                         <div class="form-group{{ $errors->has('item_code') ? ' has-error' : '' }}">
