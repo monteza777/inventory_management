@@ -26,4 +26,4 @@ Route::post('system-management/report/excel', 'ReportController@exportExcel')->n
 Route::post('system-management/report/pdf', 'ReportController@exportPDF')->name('report.pdf');
 // end of user routes
 Route::resource('items-mgmt', 'ItemManagementController');
-Route::resource('pos-mgmt', 'PosHeadController');
+Route::resource('transaction-mgmt', 'TransactionHeadController');

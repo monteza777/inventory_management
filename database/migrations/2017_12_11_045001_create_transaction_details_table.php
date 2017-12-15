@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePosDetailsTable extends Migration
+class CreateTransactionDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreatePosDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pos_details', function (Blueprint $table) {
+        Schema::create('transaction_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pos_head_id');
+            $table->integer('transaction_head_id');
             $table->string('item_code');
             $table->string('item_name');
             $table->integer('available_quantity');
@@ -33,6 +33,6 @@ class CreatePosDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pos_details');
+        Schema::dropIfExists('transaction_details');
     }
 }

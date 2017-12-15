@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePosHeadsTable extends Migration
+class CreateTransactionHeadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePosHeadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pos_heads', function (Blueprint $table) {
+        Schema::create('transaction_heads', function (Blueprint $table) {
             $table->increments('id');
             $table->decimal('vat', 5,2)->nullable();
             $table->decimal('discount', 5,2)->nullable();
@@ -35,6 +35,6 @@ class CreatePosHeadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pos_heads');
+        Schema::dropIfExists('transaction_heads');
     }
 }

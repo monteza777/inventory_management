@@ -19,4 +19,5 @@
         apply the skin class to the body tag so the changes take effect.
   -->
    <link href="{{ asset("/bower_components/AdminLTE/dist/css/skins/skin-green.min.css")}}" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/custom.css') }}">
 </head>

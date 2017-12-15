@@ -31,8 +31,11 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
-        <li class="link {{Request::is('users') ? " active " : "" }}""><a href="/"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-        <li><a href="{{ url('items-mgmt') }}"><i class="fa fa-link"></i> <span>Inventory Items</span></a></li>
+        <li class="link {{Request::is('/') ? " active " : "" }}""><a href="/"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+
+        <li class="link {{Request::is('transaction-mgmt') ? " active " : "" }}""><a href="transaction-mgmt"><i class="fa fa-link"></i> <span>Transaction</span></a></li>
+
+        <li class="link {{Request::is('items-mgmt') ? " active " : "" }}""><a href="items-mgmt"><i class="fa fa-link"></i> <span>Inventory Items</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>System Management</span>
             <span class="pull-right-container">
@@ -48,7 +51,7 @@
             <li><a href="{{ url('system-management/report') }}">Report</a></li>
           </ul>
         </li>
-        <li><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>User management</span></a></li>
+        <li class="link {{Request::is('user-management') ? " active " : "" }}""><a href="user-management"><i class="fa fa-link"></i> <span>User Management</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
