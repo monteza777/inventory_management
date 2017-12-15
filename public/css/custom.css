@@ -1,3 +1,6 @@
 [v-cloak] {
         display: none;
       }
+.savebutton{
+	margin-left: 10px;
+}
